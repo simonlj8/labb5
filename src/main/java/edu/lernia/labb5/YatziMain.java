@@ -3,14 +3,14 @@ package edu.lernia.labb5;
 import java.util.Scanner;
 
 public class YatziMain {
-    public static Die[] ds;
+    public static Dice[] ds;
     public static boolean bGameIsOn = true;
 
     public static void main(String[] args) {
         int iturn = 0;
-        ds = new Die[5];
+        ds = new Dice[5];
         for(int d=0;d<5;d++) {
-            ds[d] = new Die();
+            ds[d] = new Dice();
         }
         //We will continue until the game is over
         while(bGameIsOn == true) {
@@ -19,7 +19,7 @@ public class YatziMain {
             while(iturn < 3) {
                 System.out.println("Starting turn " + (iturn+1) + " of 3, rolling dice.");
                 for(int i=0;i<ds.length;i++) {
-                    ds[i].DieRoll();
+                    ds[i].DiceRoll();
                     //ds[i].value = 5; //Test if yatzi work
                     System.out.println(i + ": " + ds[i].getString());
                 }
