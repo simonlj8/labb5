@@ -9,7 +9,7 @@ public class Dice extends BoardGameMaterial {
     }
 
     public int DiceRoll() {
-        value = (int) (Math.random() * 6+1);
+        value = (int) (Math.random() * 6 + 1);
         return value;
     }
 
