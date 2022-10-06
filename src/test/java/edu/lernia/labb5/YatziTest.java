@@ -21,10 +21,25 @@ public class YatziTest {
     @Test
     void isNotYatziWhenOneDiceIsNotMatchingTheOther() {
         Dice[] dice = new Dice[5];
-        for(Dice dice1: dice) {
-            dice1.value = 6;
+        for(int i = 0; i < 5; i++) {
+            dice[i] = new Dice();        
+            dice[i].value = 6;
         }
-        dice[5].value = 1;
+       
         //Assert something?
+        dice[1].value = 1;
+
+        boolean yatzi = true;
+        
+        for(int j = 1; j < 5; j++) {
+        	if(dice[j].value != dice[j-1].value) {
+        		yatzi = false;
+        		break;
+        	}
+        }
+	    
+	    
+        assertEquals(yatzi, false );
+        
     }
 }
